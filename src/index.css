@@ -4,7 +4,62 @@ body {
   font-family: sans-serif;
 }
 
+.bookshelf-heading {
+  text-align: center;
+  margin: 0;
+  padding: 1rem 0;
+  color: #efefef;
+  background-color: rgba(119, 172, 184, 0.933); 
+}
+
+.book-category {
+  margin: 5rem 0;
+  padding: 0 7rem;
+}
+
+.category-title {
+  text-align: left;
+  font-size: 22px;
+  border-bottom: 1px solid #efefef;
+  margin: 3rem 0;
+  padding: 1rem 0;
+}
+
+.list-books {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.book {
+  min-width: 300px;
+  text-align: center;
+}
+
 .book-image {
   background-repeat: no-repeat;
-  min-height: 200px;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+}
+
+.book-title {
+  max-width: 60%;
+  padding: 1rem 0;
+  margin: 0 auto;
+  font-weight: bold;
+  text-align: center;
+}
+
+.book-author {
+  max-width: 60%;
+  margin: 0 auto;
+  font-size: 15px;
+  color: #888;
+  text-align: center;
+}
+
+.book select {
+  margin: 1rem 0;
 }
