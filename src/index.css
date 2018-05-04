@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+.bookshelf {
+  overflow: hidden;
+}
+
 .bookshelf-heading {
   text-align: center;
   margin: 0;
@@ -26,7 +30,7 @@ body {
 }
 
 .list-books {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   list-style: none;
 }
@@ -34,12 +38,14 @@ body {
 .book {
   min-width: 300px;
   text-align: center;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .book-image {
   background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
+  min-height: 150px;
+  min-width: 100px;
   background-position: center;
   background-size: contain;
 }
@@ -60,6 +66,14 @@ body {
   text-align: center;
 }
 
+.book-author span {
+  display: block;
+}
+
 .book select {
   margin: 1rem 0;
+}
+
+.loadingMsg {
+  text-align: center;
 }
