@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import * as BooksAPI from "./BooksAPI";
 
 class SearchPage extends Component {
   state = {
@@ -8,14 +9,27 @@ class SearchPage extends Component {
 
   updateQuery = query => {
     this.setState(() => ({
-      query: query.trim()
+      query: query
     }));
-    // in the update query function above fire off API "search" request
-    // add another method called Update Results and take query as the argument and using that get the results and update the state to be the array of results based on the query
+    this.getBooks(query)
   };
+  
+  getBooks = query => {
+      BooksAPI.search(query).then(results => {
+      this.setState({results: results});
+      console.log(query)
+      console.log(this.state.results)
+    });
+  }
 
+
+  // add another method called Update Results and take query as the argument and using that get the results and update the state to be the array of results based on the query
+
+  
   render() {
-    const { query } = this.state;
+
+    const { query, results } = this.state;
+    
 
     return (
       <div className="search-page">
@@ -25,7 +39,7 @@ class SearchPage extends Component {
           type="type"
           placeholder="Search Books"
           value={query}
-          // add on change function
+          onChange={event => this.updateQuery(event.target.value)}
         />
       </div>
     );

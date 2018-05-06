@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import { Route } from "react-router-dom";
 import SearchPage from "./Search";
-import LoadingImg from "./Loading";
 import BookShelf from "./Bookshelf";
 
 class App extends Component {
