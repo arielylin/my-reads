@@ -3,7 +3,6 @@ import MyReads from "./MyReadsPage";
 import * as BooksAPI from "./BooksAPI";
 import LoadingImg from "./Loading";
 import { Link } from "react-router-dom";
-
 class BookShelf extends Component {
   state = {
     books: null
@@ -16,16 +15,18 @@ class BookShelf extends Component {
     });
   }
 
-  // move book on option change
   handleChangeShelf = (book, shelf) => {
-    //go through books in array and if the book you're mapping through's id matches the current book you've clicked on, then change the mapped book shelf to the current shelf (target's value) and return it.
-    const books = this.state.books.map(currentBook => {
-      if (currentBook.id === book.id) currentBook.shelf = shelf;
-      return currentBook;
-    });
-    // set the state to re-render
-    this.setState({
-      books
+    BooksAPI.update(book, shelf).then(() => {
+      const books = this.state.books.map(currentBook => {
+        if (currentBook.id === book.id) {
+          currentBook.shelf = book.shelf;
+        }
+        return currentBook;
+      });
+      // set the state to re-render
+      this.setState({
+        books
+      });
     });
   };
 
@@ -37,9 +38,11 @@ class BookShelf extends Component {
     return (
       <div className="bookshelf">
         <h1 className="bookshelf-heading">My Reads</h1>
-        <Link to="/search" className="search-link">
-          Search Books
-        </Link>
+        <div className="search-link-container">
+          <Link to="/search" className="search-link">
+            Search Books
+          </Link>
+        </div>
         <MyReads
           name="Currently Reading"
           books={books.filter(book => book.shelf === "currentlyReading")}

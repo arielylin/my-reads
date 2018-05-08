@@ -30,16 +30,18 @@ body {
 }
 
 .list-books {
-  display: inline-block;
-  justify-content: center;
+  display: flex;
   list-style: none;
+  flex-wrap: wrap
 }
 
 .book {
+  flex: 1;
   min-width: 300px;
   text-align: center;
   display: inline-block;
   vertical-align: top;
+  margin: 2rem 0;
 }
 
 .book-image {
@@ -48,6 +50,10 @@ body {
   min-width: 100px;
   background-position: center;
   background-size: contain;
+}
+
+.no-img-found {
+  width: 150px;
 }
 
 .book-title {
@@ -66,6 +72,12 @@ body {
   text-align: center;
 }
 
+.search-link,
+.no-books a {
+  color: #000;
+}
+
+
 .book-author span {
   display: block;
 }
@@ -76,4 +88,26 @@ body {
 
 .loadingMsg {
   text-align: center;
+}
+
+.search-link-container {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.search-page {
+  text-align: center;
+}
+
+.search-books {
+  width: 60%;
+  min-height: 1rem;  
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.bookshelf-link {
+  display: block;
+  margin: 1rem 0;
+  color: #000;
 }
