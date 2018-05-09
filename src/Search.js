@@ -26,10 +26,14 @@ class SearchPage extends Component {
 
     BooksAPI.search(query).then(results => {
       // if the item you search for doesnt exist set state to empty array
+
       if (results.error) {
-        this.setState({ results: [] });
+        this.setState({
+          results: []
+        });
       } else {
         this.setState({ results: results });
+        console.log(this.state.results);
       }
     });
   };
@@ -71,12 +75,11 @@ class SearchPage extends Component {
             onShelfChange={this.handleChangeShelf}
           />
         </div>
-        {!results.length &&
-          !query && (
-            <div className="search-error">
-              No Books Listed. Try searching for books!
-            </div>
-          )}
+        {!results.length && (
+          <div className="search-error">
+            No Books Listed. Try searching for books!
+          </div>
+        )}
       </div>
     );
   }

@@ -18,7 +18,13 @@ body {
 
 .book-category {
   margin: 5rem 0;
-  padding: 0 7rem;
+  padding: 0 2rem;
+}
+
+@media (min-width: 600px) {
+  .book-category {
+    padding: 0 7rem;
+  }
 }
 
 .category-title {
@@ -37,11 +43,20 @@ body {
 
 .book {
   flex: 1;
-  min-width: 300px;
+  max-width: 200px;
   text-align: center;
   display: inline-block;
   vertical-align: top;
-  margin: 2rem 0;
+  margin: 2rem 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid #d4d4d4;
+  box-shadow: 2px 2px #ccd4dd;
+}
+
+.book:hover {
+
+  box-shadow: 2px 2px 2px 2px #b0c9e4;
 }
 
 .book-image {
@@ -73,7 +88,8 @@ body {
 }
 
 .search-link,
-.no-books a {
+.no-books a,
+.previewLink a {
   color: #000;
 }
 

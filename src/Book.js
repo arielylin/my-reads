@@ -45,6 +45,11 @@ class Book extends Component {
               {this.handleImageElement(book)}
               <p className="book-title">{book.title}</p>
               <p className="book-author">{this.handleAuthorElement(book)}</p>
+              <p className="previewLink">
+                <a href={book.previewLink} target="_blank">
+                  Preview
+                </a>
+              </p>
               <select
                 name={book.id}
                 value={book.shelf || "none"}

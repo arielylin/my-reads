@@ -18,9 +18,7 @@ class BookShelf extends Component {
   handleChangeShelf = (book, shelf) => {
     BooksAPI.update(book, shelf).then(() => {
       const books = this.state.books.map(currentBook => {
-        if (currentBook.id === book.id) {
-          currentBook.shelf = book.shelf;
-        }
+        if (currentBook.id === book.id) currentBook.shelf = shelf;
         return currentBook;
       });
       // set the state to re-render
