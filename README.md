@@ -2,7 +2,7 @@
 
 <h2>Udacity React NanoDegree Project 1</h2>
 
-<h3>How to Start the App<h3>
+<h3>How to Start the App</h3>
 -You must have node and npm installed
 -run git clone https://github.com/arielylin/my-reads.git
 -run $npm install or $yarn install
