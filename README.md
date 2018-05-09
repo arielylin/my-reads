@@ -1,14 +1,14 @@
-My Reads
+<h1>My Reads</h1>
 
-Udacity React NanoDegree Project 1
+<h2>Udacity React NanoDegree Project 1</h2>
 
-How to Start the App
+<h3>How to Start the App<h3>
 -You must have node and npm installed
 -run git clone https://github.com/arielylin/my-reads.git
 -run $npm install or $yarn install
 -run $npm start or $yarn start once dependencies are installed
 
-How to Use The App
+<h3>How to Use The App</h3>
 -The app has 3 shelves (Currently Reading, Want to Read, and Read) 
 -You may select the shelves you like to move books to in the dropdown under the book.
 -To add more books to the shelves, click on the "Search books" link
