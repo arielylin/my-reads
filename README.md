@@ -5,8 +5,8 @@
 <h3><ul>How to Start the App</ul></h3>
   <li>You must have node and npm installed</li>
   <li>run git clone https://github.com/arielylin/my-reads.git</li>
-  <li>run $npm install or $yarn install</li>
-  <li>run $npm start or $yarn start once dependencies are installed</li>
+  <li>run `$npm install` or `$yarn install`</li>
+  <li>run `$npm start` or `$yarn start` once dependencies are installed</li>
 
 <h3><ul>How to Use The App</ul></h3>
 <li>The app has 3 shelves (Currently Reading, Want to Read, and Read) </li>
