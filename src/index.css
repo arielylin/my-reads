@@ -127,3 +127,11 @@ body {
   margin: 1rem 0;
   color: #000;
 }
+
+/* 404 page */
+
+.error-page--content {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 20px;
+}

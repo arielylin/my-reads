@@ -7,15 +7,6 @@ class Book extends Component {
     onShelfChange: PropTypes.func.isRequired
   };
 
-  handleAuthorElement = book => {
-    if (!book.authors) return;
-
-    // go through each current book's author
-    return book.authors.map(author => {
-      return <span key={book.id + author}>{author}</span>;
-    });
-  };
-
   handleImageElement = book => {
     if (!book.imageLinks)
       return (
@@ -44,7 +35,9 @@ class Book extends Component {
             <li className="book" key={book.id}>
               {this.handleImageElement(book)}
               <p className="book-title">{book.title}</p>
-              <p className="book-author">{this.handleAuthorElement(book)}</p>
+              <p className="book-author">
+                {Array.isArray(book.authors) ? book.authors.join(", ") : ""}
+              </p>
               <p className="previewLink">
                 <a href={book.previewLink} target="_blank">
                   Preview

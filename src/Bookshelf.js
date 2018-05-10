@@ -1,35 +1,10 @@
 import React, { Component } from "react";
 import MyReads from "./MyReadsPage";
-import * as BooksAPI from "./BooksAPI";
 import LoadingImg from "./Loading";
 import { Link } from "react-router-dom";
 class BookShelf extends Component {
-  state = {
-    books: null
-  };
-
-  // get books from BooksAPI and set state to list of books
-  componentDidMount() {
-    BooksAPI.getAll().then(books => {
-      this.setState({ books: books });
-    });
-  }
-
-  handleChangeShelf = (book, shelf) => {
-    BooksAPI.update(book, shelf).then(() => {
-      const books = this.state.books.map(currentBook => {
-        if (currentBook.id === book.id) currentBook.shelf = shelf;
-        return currentBook;
-      });
-      // set the state to re-render
-      this.setState({
-        books
-      });
-    });
-  };
-
   render() {
-    const { books } = this.state;
+    const { books, onShelfChange } = this.props;
     if (books === null) {
       return <LoadingImg />;
     }
@@ -44,17 +19,17 @@ class BookShelf extends Component {
         <MyReads
           name="Currently Reading"
           books={books.filter(book => book.shelf === "currentlyReading")}
-          onShelfChange={this.handleChangeShelf}
+          onShelfChange={onShelfChange}
         />
         <MyReads
           name="Want To Read"
           books={books.filter(book => book.shelf === "wantToRead")}
-          onShelfChange={this.handleChangeShelf}
+          onShelfChange={onShelfChange}
         />
         <MyReads
           name="Read"
           books={books.filter(book => book.shelf === "read")}
-          onShelfChange={this.handleChangeShelf}
+          onShelfChange={onShelfChange}
         />
       </div>
     );
